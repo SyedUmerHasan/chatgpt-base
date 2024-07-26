@@ -1,0 +1,15 @@
+name: Manual Trigger with Approval
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: manual-approval
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run deployment script
+        run: echo "Deploying application..."
